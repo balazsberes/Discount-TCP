@@ -16,8 +16,17 @@
         {
             for (int i = 0; i < count; i++)
             {
-                var code = GenerateRandomCode(length);
-                discountCodes.Add(new DiscountCode { Code = code, IsUsed = false });
+                var isCodeGenerated = false;
+                do
+                {
+                    var code = GenerateRandomCode(length);
+                    var foundCode = discountCodes.FirstOrDefault(c => c.Code == code);
+                    if (foundCode == null)
+                    {
+                        discountCodes.Add(new DiscountCode { Code = code, IsUsed = false });
+                        isCodeGenerated = true;
+                    }
+                } while (!isCodeGenerated);
             }
             SaveCodesToFile();
             return true;
