@@ -1,4 +1,4 @@
-﻿partial class DiscountCodeManager
+﻿class DiscountCodeManager
 {
     private const string FilePath = "discountCodes.txt";
     private static readonly object LockObject = new();
