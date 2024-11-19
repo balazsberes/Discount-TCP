@@ -3,6 +3,9 @@
 ## System description
 The system is designed to generate and use DISCOUNT codes. The system consists of a server and client side.
 
+## Usage
+Start both projects (Client & Server) and follow the instructions on the Client window.
+
 ## Features
 • DISCOUNT code generation.
 
